@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>New TODO </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../assets/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/bootstrap.min.css" >
+       
+    </head>
+    <body>
+        <div class="update-container container-fluid d-flex fles-column justify-content-center align-items-center">
+            <div class="cart shadow pt-2 pb-2" style="width:30rem;">
+                <div class="card-body">
+                    <h5 class="card-title">New Todo</h5>
+                    <input type="text" class="form-control mt-3 mb-3" id="inputValue">
+                    <a href="#" class="card-link btn btn-sm btn-outline-danger" id="cancelBtn">Vazgeç</a>
+                    <a href="#" class="card-link btn btn-sm btn-outline-warning"id="saveBtn">Kaydet</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const electron=require("electron");
+            const{ ipcRenderer} = electron;
+            let cancelBtn=document.querySelector("#cancelBtn");
+            let saveBtn=document.querySelector("#saveBtn");
+            let inputValue=document.querySelector("#inputValue");
+            cancelBtn.addEventListener("click",()=>{
+                ipcRenderer.send("todo:close");
+            })
+            saveBtn.addEventListener("click",()=>{
+                ipcRenderer.send("todo:save",{ref:"new", inputValue:inputValue.value});
+            })
+
+        </script>
+    </body>
+</html>

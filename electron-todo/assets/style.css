@@ -1,0 +1,19 @@
+body{
+    background-color: #dedede;
+}
+.update-container{
+    position:absolute;
+    top: 25px;
+    left: 0px;
+    right: 0px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    visibility: visible;
+}
+.main-container{
+    z-index: 0;
+}
+.todo-item{
+    background-color: #582E48!important;
+}

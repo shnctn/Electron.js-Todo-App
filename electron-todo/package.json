@@ -1,0 +1,17 @@
+{
+  "name": "electron-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Şahin Çetin",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.1.12",
+    "pg": "^8.8.0",
+    "postgresql": "^0.0.1",
+    "sqlserver": "^0.0.2-security"
+  }
+}
